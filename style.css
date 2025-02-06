@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-family: "Poppins", serif;
+}
+
+.VENCE {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 139%;
+  color: #495057;
+  text-align: left;
+}
+
+.Sign-in {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 208%;
+  color: rgba(73, 80, 87, 0.5);
+  text-align: right;
+  margin-left: auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 25px;
+}
+
+.nav__link {
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 208%;
+  color: rgba(73, 80, 87, 0.5);
+  text-decoration: none;
+}
+
+.nav__link:hover {
+  color: #007bff;
+  /* Колір при наведенні */
+}
