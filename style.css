@@ -1,18 +1,43 @@
+/* Загальні стилі для html тегів */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.header {
-  height: 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+body {
   font-family: "Poppins", serif;
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  background-color: #F8F9FA;
 }
 
-.VENCE {
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #495057;
+}
+
+
+
+
+
+/* Загальні класи для всіх блоків і сторінок  */
+.container {
+  padding: 0 30px;
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.container-md {
+  max-width: 1090px;
+}
+
+.logo {
   font-weight: 700;
   font-size: 18px;
   line-height: 139%;
@@ -20,7 +45,67 @@
   text-align: left;
 }
 
-.Sign-in {
+
+
+
+
+
+
+/* Конкретна верстка блоку  */
+.header {
+  padding: 30px 0;
+}
+
+.header .logo {}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 40px;
+}
+
+
+.header .nav {
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 25px;
+}
+
+.header .nav__link {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 208%;
+  color: rgba(73, 80, 87, 0.5);
+  text-decoration: none;
+}
+
+.header .nav__link:hover {
+  color: #495057;
+}
+
+.header .is-active {
+  position: relative;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 208%;
+  text-align: right;
+  color: #495057;
+}
+
+.header .is-active::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-bottom: 2px solid #ddbea9;
+  width: 100%;
+  height: 0px;
+}
+
+.header .sign-in {
   font-weight: 500;
   font-size: 12px;
   line-height: 208%;
@@ -29,23 +114,222 @@
   margin-left: auto;
 }
 
-.nav {
-  display: flex;
-  justify-content: center;
-  flex-grow: 1;
-  gap: 25px;
+.header .sign-in:hover {
+  color: #495057;
 }
 
-.nav__link {
 
+
+.gallery {
+  margin-bottom: 100px;
+}
+
+.gallery .gallery__hold {
+  background-color: #545454;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
+  min-height: 500px;
+  position: relative;
+
+  background-image: url(./image/header-img.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.gallery .gallery__hold::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.gallery .gallery__author {
+  position: relative;
+}
+
+.gallery .gallery__title {
+  position: relative;
+}
+
+
+.blog {}
+
+.blog .blog__hold {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 100px;
+}
+
+.blog .categories {
+  max-width: 400px;
+  width: 100%;
+}
+
+.blog .card-list {
+  max-width: 600px;
+  width: 100%;
+}
+
+.blog .categories__text {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 160%;
+  color: #212529;
+}
+
+.blog .categories__list {
+  font-family: "Poppins", serif;
   font-weight: 500;
   font-size: 12px;
   line-height: 208%;
-  color: rgba(73, 80, 87, 0.5);
-  text-decoration: none;
+  color: #495057;
+  list-style-type: none;
 }
 
-.nav__link:hover {
-  color: #007bff;
-  /* Колір при наведенні */
+.categories__list .categories__list__item::before {
+  content: '+';
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 208%;
+  color: #495057;
+  margin-right: 10px;
 }
+
+@media (max-width: 1090px) {
+  .blog .blog__hold {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .blog .card-list,
+  .blog .categories {
+    max-width: 100%;
+  }
+}
+
+
+
+.card-list {
+  display: flex;
+  color: #212529;
+}
+
+
+.card__section {}
+
+.card__image {
+  width: 287px;
+  height: 200px;
+  margin-right: 31px;
+}
+
+.card__date {
+  margin-top: 5px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 167%;
+  text-align: left;
+  color: #6c757d
+}
+
+.card__body {
+  margin-top: 15px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 156%;
+  color: #212529;
+}
+
+.card__description {
+  margin-top: 15px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 167%;
+  color: #6c757d;
+}
+
+.card__author {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 118px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 167%;
+  color: #6c757d;
+}
+
+.like-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.like-icon {
+  width: 20px;
+  height: 20px;
+  fill: rgba(108, 117, 125, 0.6);
+}
+
+.like-count {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+
+
+
+/* 
+.img-space {
+  display: block;
+  margin-top: 30px;
+  width: 100%;
+  height: auto;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin-bottom: 40px;
+}
+
+
+
+
+.content-top {
+  margin-top: 100px;
+}
+
+.img_content {
+  width: 288px;
+  height: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+.img-active {
+  border: 1px solid #000;
+  border-radius: 3px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background: #c4c4c4
+}
+
+.date {
+  font-family: "Poppins", serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 167%;
+  text-align: right;
+  color: #6c757d;
+} */
