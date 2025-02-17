@@ -253,6 +253,8 @@ a:hover {
   width: 287px;
   height: 200px;
   margin-right: 31px;
+  border-radius: 3px;
+  background: #c4c4c4
 }
 
 .card__date {
@@ -327,7 +329,6 @@ a:hover {
 .pagination {
   display: flex;
   align-items: center;
-  background: #fff;
   color: #383838;
   border-radius: 6px;
 }
@@ -374,9 +375,21 @@ a:hover {
   cursor: pointer;
 }
 
+.next__page:hover {
+  color: #212529;
+}
+
+.link:hover {
+  color: #212529;
+}
+
 .footer {
   background-color: #212529;
   margin-top: 100px;
+
+}
+
+.container-footer {
   max-width: 1440px;
   height: 325px;
   display: flex;
@@ -404,6 +417,7 @@ a:hover {
   justify-content: flex-end;
   width: 100%;
   padding-right: 100px;
+  cursor: pointer;
 }
 
 .footer__link {
@@ -433,5 +447,5 @@ a:hover {
   line-height: 167%;
   color: rgba(248, 249, 250, 0.5);
   padding-left: 100px;
-  padding-right: 100px;
+  padding-right: 125px;
 }
