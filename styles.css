@@ -26,6 +26,10 @@ a:hover {
 
 
 /* Загальні класи для всіх блоків і сторінок  */
+.padding-nav {
+  padding-top: 100px;
+}
+
 .container {
   padding: 0 30px;
   max-width: 1300px;
@@ -54,6 +58,11 @@ a:hover {
 /* Конкретна верстка блоку  */
 .header {
   padding: 30px 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .header .logo {}
@@ -134,6 +143,21 @@ a:hover {
   margin-left: auto;
 }
 
+.header-white {}
+
+.header-white .logo {
+  color: #F8F9FA;
+}
+
+.header-white .sign-in,
+.header-white .nav__link {
+  color: rgba(248, 249, 250, 0.5);
+}
+
+.header-white .sign-in:hover,
+.header-white .nav__link:hover {
+  color: rgb(248, 249, 250);
+}
 
 
 .gallery {
@@ -155,6 +179,7 @@ a:hover {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  padding-top: 140px;
 }
 
 .gallery .gallery__hold::before {
@@ -386,22 +411,20 @@ a:hover {
 .footer {
   background-color: #212529;
   margin-top: 100px;
-
+  padding: 120px 0 80px;
 }
 
-.container-footer {
-  max-width: 1440px;
-  height: 325px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+.container-footer {}
 
 .footer__content {
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding-left: 100px;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(229, 229, 229, 0.2);
+  padding-bottom: 36px;
 }
 
 .footer__logo {
@@ -409,14 +432,13 @@ a:hover {
   font-size: 18px;
   line-height: 139%;
   color: #f8f9fa;
-  margin-bottom: 8px;
+  min-width: 200px;
 }
 
 .footer__socials {
   display: flex;
   justify-content: flex-end;
-  width: 100%;
-  padding-right: 100px;
+  gap: 25px;
   cursor: pointer;
 }
 
@@ -425,27 +447,149 @@ a:hover {
   font-size: 12px;
   line-height: 208%;
   color: rgba(248, 249, 250, 0.5);
-  margin-left: 25px;
 }
 
-.footer__line {
-  width: 1240px;
-  border-top: 1px solid rgba(229, 229, 229, 0.2);
-  margin-top: 32px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .footer__author {
   display: flex;
   justify-content: space-between;
-  width: 1440px;
   margin-top: 40px;
-  margin-left: auto;
-  margin-right: auto;
-  font-style: 12px;
+  font-size: 12px;
   line-height: 167%;
   color: rgba(248, 249, 250, 0.5);
-  padding-left: 100px;
-  padding-right: 125px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+.typo {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.typo>* {
+  margin: 20px 0;
+}
+
+.typo p {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 179%;
+  color: #6c757d;
+}
+
+.typo h2 {}
+
+
+.typo img,
+.typo iframe {
+  border-radius: 5px;
+  width: 160%;
+  margin: 30px 0 30px -30%;
+}
+
+.typo iframe {
+  height: 500px;
+}
+
+@media (max-width: 1170px) {
+
+  .typo img,
+  .typo iframe {
+    width: 140%;
+    margin: 30px 0 30px -20%;
+  }
+}
+
+@media (max-width: 1000px) {
+
+  .typo img,
+  .typo iframe {
+    width: 114%;
+    margin: 30px 0 30px -7%;
+  }
+
+  .typo iframe {
+    height: 300px;
+  }
+}
+
+@media (max-width: 824px) {
+
+  .typo img,
+  .typo iframe {
+    width: 100%;
+    margin: 30px 0 30px 0;
+  }
+}
+
+.typo__bottom {
+  gap: 28px;
+}
+
+.typo__bottom-text {
+  color: #6C757D;
+  border: 1px solid #c4c4c4;
+  border-radius: 3px;
+  padding: 2px 13px;
+  width: 65px;
+  height: 24px;
+  margin-right: 15px;
+}
+
+.latest {
+  max-width: 1241px;
+  margin: 0 auto;
+}
+
+.container {}
+
+.latest__title {
+  margin-top: 198px;
+  margin-bottom: 60px;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 80%;
+  color: #495057;
+}
+
+.latest__list {
+  display: flex;
+  gap: 30px;
+}
+
+.card-article {
+  max-width: 400px;
+  display: flex
+}
+
+.card-article__img-hold {}
+
+.card-article__img {}
+
+.card-article__text-hold {
+  padding-left: 30px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 156%;
+  color: #212529;
+}
+
+.card-article__caregory-list {
+  margin-bottom: 15px;
+}
+
+.category {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 167%;
+  color: #495057;
+  text-decoration: none;
+}
+
+.card-article__title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 156%;
+  color: #212529;
 }
